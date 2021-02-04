@@ -1,7 +1,22 @@
+let playerXTurn = true;
+let totalTurns = 0;
+let gameOver = false;
 
 
-
-
+function performLogic(button, tile){
+  if(playerXTurn){
+    $(button).hide();
+    $(tile).text("X");
+    $("#playerTurn").text("The Current Player is Player O");
+  } else{
+    $(button).hide();
+    $(tile).text("O");
+    $("#playerTurn").text("The Current Player is Player X");
+  }
+  playerXTurn = !playerXTurn
+  totalTurns++;
+  $("#turnsCounter").text("Total Number of Turns Passed: " + totalTurns);
+}
 
 
 
